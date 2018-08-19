@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include <ctime>
 
-
-
-
-
-
-
 //This is a function used to sort with the help of aux array.
 template <typename T>
 void merge(T *arr, int l, int mid, int r) {
