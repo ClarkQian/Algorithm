@@ -26,6 +26,7 @@ void merge(T *arr, int l, int mid, int r) {
 			j++;
 		}
 	}
+	delete []aux;
 	return;
 }
 
