@@ -85,7 +85,26 @@ public:
 		}
 
 	}
+	Key minimum() {
+		Node* minNode = minimum(root);
+		return minNode.key; 
+	}
 
+	Key maxmum() {
+		Node* maxNode = maxmum(root);
+		return maxNode.key;
+	}
+	void removeMin() {
+		if(root != NULL)
+			root = removeMin(root);
+		return;
+	}
+
+	void removeMax() {
+		if ( root != NULL) 
+			removeMax(root);
+		return;
+	}
 private:
 	void destory(Node *node) {
 
@@ -113,7 +132,7 @@ private:
 			count++;
 			return new Node(key, value);
 		}
-
+		//this part is a function unit.
 		if (node->key == key)
 			node->value = value;
 		else if (key < node->key) 
@@ -121,6 +140,7 @@ private:
 		else
 			node->right = insert(node->right, key, value);
 		return node;
+		//this part is a function unit.
 	}
 	bool contain(Node *node, Key key) {
 		if(node == NULL)
@@ -161,8 +181,8 @@ private:
 		if (node == NULL)
 			return;
 
-		cout<<node.key<<endl;
 		inOder(node.left);
+		cout<<node.key<<endl;
 		inOder(node.right);
 	}
 
@@ -174,9 +194,45 @@ private:
 		posOder(node.left);
 		posOder(node.right);
 	}
+	Node* minimum(Node *node) {
+		if (node.left == NULL)
+			return node;
+
+		return minimum(node.left);
+	}
+
+	Node* maxmum(Node *node) {
+		if (node.right == NULL)
+			return node;
+		return maxmum(node.right);
+	}
+
+	Node* removeMin(Node *node) {
+		if (node.left == NULL) {
+			Node* rightNode = node.right;
+			delete node;
+			return rightNode;
+		}
+
+		node.left = removeMin(Node.left);
+
+		return node;
+
+	}
+	Node* removeMax(Node *node) {
+
+		if (node.right == NULL) {
+			Node* leftNode = node.left;
+			delete node;
+			return leftNode;
+		}
+
+		node.right = removeMax(node.right);
+		return node;
+	}
 };
 
-
+//end
 
 // This is the practice.
 // void levelOder(){
