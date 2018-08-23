@@ -6,12 +6,12 @@ using namespace std;
 
 //pre or in or pos oder traversal
 template < typename Key, typename Value>
-class BST(){
+class BST{
 private:
 	struct Node
 	{
 		Key key;
-		Value Value;
+		Value value;
 		Node *left;
 		Node *right;
 
@@ -19,6 +19,12 @@ private:
 			this->key = key;
 			this->value = value;
 			this->left = this->right = NULL;
+		}
+		Node (Node*node) {
+			this->key = node.key;
+			this->value = node.value;
+			this->left = node.left;
+			this->right = node.right;
 		}
 	};
 	Node *root;
@@ -102,8 +108,12 @@ public:
 
 	void removeMax() {
 		if ( root != NULL) 
-			removeMax(root);
+			root = removeMax(root);
 		return;
+	}
+	void removeKey(Key key) {
+		if (root != NULL)
+			root = removeKey(root, key); 
 	}
 private:
 	void destory(Node *node) {
@@ -211,6 +221,7 @@ private:
 		if (node.left == NULL) {
 			Node* rightNode = node.right;
 			delete node;
+			count--;
 			return rightNode;
 		}
 
@@ -224,11 +235,78 @@ private:
 		if (node.right == NULL) {
 			Node* leftNode = node.left;
 			delete node;
+			count--;
 			return leftNode;
 		}
 
 		node.right = removeMax(node.right);
 		return node;
+	}
+	//using the removeMin();
+	Node* removeKey(Node *node, Key key) {
+		if (node == NULL)
+			return NULL;
+
+		if (key < node.key) {
+			node.left = removeKey(node.left);
+			return node;
+		} else if (key > node.key) {
+			node.right = removeKey(node.right);
+			return node;
+		} else { // if (node.key == key)
+			if (node.right == NULL) {
+				Node* leftNode= node.left;
+				delete node;
+				count--;
+				return leftNode; 
+			} 
+			if (node.left == NULL) {
+				Node* rightNode = node.right;
+				delete node;
+				count--;
+				return rightNode;
+			}
+			Node s = new Node(minimum(node.right));
+			count++;
+			s.left = node.left;
+			s.right = removeMin(node.right);
+			delete node;
+			return s;
+		}
+	}
+	//using removeMax();
+	Node* removeKey(Node* node, Key key) {
+
+		if (node == NULL)
+			return NUll;
+
+		if (key < node.key) {
+			node.left = removeKey(node.left);
+			return node;
+		} else if (key > node.key) {
+			node.right = removeKey(node.right):
+			return node;
+		} else {
+			if (node.left == NULL) {
+				Node* rightNode = node.right;
+				delete node;
+				count --;
+				return rightNode;
+			}
+			if (node.right == NULL) {
+				Node* leftNode = node.right;
+				delete node;
+				count--;
+				return leftNode;
+			}
+
+			Node* successor = new Node(removeMax(node.left));
+			count++;
+			successor.right = node.right;
+			successor.left = removeMax(node.left);
+			delete node;
+			return successor;
+		}
 	}
 };
 
