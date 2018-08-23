@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-//version 1.0
+//version 1.0 quick find
 class UnionFind
 {
 private:
