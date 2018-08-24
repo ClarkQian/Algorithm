@@ -25,7 +25,7 @@ private:
 	int *size;
 	int count;
 public:
-	unionFind2(int count) {
+	unionFind3(int count) {
 		this->count = count;
 		id = new int[count];
 		rank = new int[count];
@@ -69,7 +69,7 @@ public:
 		return find(p) == find(q);
 	}
 
-	~unionFind2() {
+	~unionFind3() {
 		delete [] id;
 		delete [] rank;
 	}
