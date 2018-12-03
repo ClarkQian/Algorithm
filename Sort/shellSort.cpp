@@ -26,7 +26,11 @@ void shellSort(T arr[], int n){
         //about above thing. when the i is near to h the child loop is only swap at most 1 time
         //but when the size is long enough... i is much bigger than h. 
         //at that time the child loop will have  arr[i],arr[i - h], arr[i - 2*h].....
-
+        
+        //one more thing; h is initialized as 1 so 3*h + 1 will not be so big.
+        //for instance, the size of arrary is 27, the h is 13.
+        //so when the i=26; we will compare arr[26],arr[13],arr[0].
+        //if the list is long, I think maybe it will work more efficiently
         h /= 3;
     }
 }
