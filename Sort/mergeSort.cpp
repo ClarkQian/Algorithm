@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctime>
+//Something you must know:
+//
+//when we have five index 0 1 2 3 4, the l = 0; mid = 2; r = 4; obviously if we start as l and mid, the division is 2 and 3
+//or we can start as l and mid+1, the division will be 3 and 2;
+//but if ther is 0 1, l=0 mid = 0 r =1; so if l = mid there will may cause some problems in conditional struct.
+
 
 //This is a function used to sort with the help of aux array.
 template <typename T>
