@@ -10,6 +10,8 @@ void merge(T *arr, int l, int mid, int r) {
 	for (i = l; i <= r; i++) {
 		aux[i-l] = arr[i];
 	}
+	//remember j = mid + 1 insetead of mid, because when the size is 1, and l = 0; mid = 0; l = 1; then you will find that the result will
+	//disordered.
 	i = l; int j = mid+1;
 	for(int k = l; k <= r; k++){
 		if (i > mid) {
