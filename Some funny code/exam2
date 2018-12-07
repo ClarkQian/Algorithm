@@ -224,9 +224,9 @@ void run(SqStack<T>& tester){
 	int tag = 0;
 	printf("---------------Hello Sir, Welcome to Double Stacks System!---------------\n");
 	while (true){
-		printf("Please choose which stack to be used 1 or 2 or 0(just enter the number, 0 means quit!): ");
 		if(!tag){
 			while(cin>>num_p1){
+				printf("Please choose which stack to be used 1 or 2 or 0(just enter the number, 0 means quit!): ");
 				if (num_p1 == 1 || num_p1 == 2 || num_p1 == 0)
 					break;
 				else
