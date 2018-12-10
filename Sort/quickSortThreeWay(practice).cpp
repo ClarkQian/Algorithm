@@ -2,12 +2,24 @@
 #include <ctime>
 #include <algorithm>
 using namespace std;
+void insertSort(int *arr, int l, int r){
+	for(int i = l+1; i <= r; i++){
+		int e = arr[i];
+		int j;
+		for(j = i; j-1 >= l && arr[j-1] > e; j--){
+			arr[j] = arr[j-1];
+		}
+		arr[j] = e;
+	}
+	return;
+}
 
 void __partion(int* arr, int l, int r){
 	//There must have stop condition at the head of the recursion function
-	if(r-l <= 0)
+	if(r-l <= 15){
+		insertSort(arr,l, r);	
 		return;
-
+	}
 	//lost code part
 	swap(arr[l],arr[rand()%(r-l+1)+l]);
 
