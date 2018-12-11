@@ -26,6 +26,9 @@ private:
 			int i = 2*index;
 			if(i+1 <= count && data[i] < data[i+1])
 				i = i+1;
+			//correct code here!
+			if(data[index] > data[i])
+				break;
 			swap(data[i],data[index]);
 			index = i;
 		}
