@@ -1,0 +1,8 @@
+1.  in |-aEasyMaxHeap.cpp
+          |- shiftDown -> 29 line
+              **E: if the parent element is bigger than both of sons, I do not need to sawp them, but I do that incorrectly.
+              
+2.  in |-MaxHeapWithHeapfied.cpp
+          |- extractMax -> 80 line
+              **E: pay attention to details, 'count' will be used in shiftDown but I fail to change 'count' before that, instead, I change it 
+                   ater that. So it is a big problem, just pay attention to deatails!
