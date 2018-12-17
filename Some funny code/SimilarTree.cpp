@@ -83,6 +83,7 @@ void BinaryTree<T>:: Create(T endflag){
 	cin>>ain;
 	if (ain == endflag ){
 		Head = NULL;
+		return;
 	}
 	Head = new Node<T>;
 	Head -> data = ain;
