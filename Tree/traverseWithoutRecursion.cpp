@@ -45,6 +45,7 @@ Node{
 	node* link;
 	int flag;
 }
+//two in and two out!
 void postTraverse(){
 	Node * stack[MAX];
 	Node* p = Head;
