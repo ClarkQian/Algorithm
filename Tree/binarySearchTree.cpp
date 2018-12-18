@@ -282,6 +282,7 @@ private:
 
 		if (key < node.key) {
 			node.left = removeKey(node.left);
+			//return node means just return itself
 			return node;
 		} else if (key > node.key) {
 			node.right = removeKey(node.right):
@@ -289,6 +290,7 @@ private:
 		} else {
 			if (node.left == NULL) {
 				Node* rightNode = node.right;
+				//no forget the delete process
 				delete node;
 				count --;
 				return rightNode;
