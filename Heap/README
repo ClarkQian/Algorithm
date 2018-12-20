@@ -1,0 +1,15 @@
+TO KNOW:
+
+Heap is a struct to get the max or min value from a list of elements by using minHeap or maxHeap
+
+TO CREATE:
+
+Ceating an array start from 1, and put in all the elements. then continue to execute shift down from size/2 -> Max/Min Heap
+
+TO GET AND MANTAIN:
+
+Extract the first element and fill the position with the last element and then do shifdown with the first element.
+
+TO IMPROVEMENT:
+
+Vacate the position instead of using swap
