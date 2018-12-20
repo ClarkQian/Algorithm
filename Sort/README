@@ -1,0 +1,6 @@
+TO KNOW:
+there are many sort algorithms:
+
+1. o(n^2): Bubble Sort, Insertion Srot, Selection Sort
+2. o(n^3/2): Shell Sort
+3. o(logn): Quick Sort(one way, two way, three way), Merge Sort
