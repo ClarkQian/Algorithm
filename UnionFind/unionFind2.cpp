@@ -59,7 +59,9 @@ public:
 		return p;
 		*/
 	}
-
+	
+	//we need to realize is that we should make the tree's level is smallest
+	//it is not right to count the subnode of this node!.
 	void unioElements(int p, int q) {
 		int pRoot = find(p);
 		int qRoot = find(q);
