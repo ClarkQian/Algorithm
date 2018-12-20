@@ -8,6 +8,15 @@
 using namespace std;
 
 
+/////////////////////////////
+//   adjcency list struct. //
+//   0 -> 1 2	           //
+//   1 -> 3 4              // 
+//   2 -> 5 6 4            //
+//   3 -> 7 9              //
+/////////////////////////////
+
+
 class SparseGraph
 {
 private:
@@ -22,6 +31,7 @@ public:
 		this->directed = directed;
 		//count from index 0;
 		for (int i = 0; i < n; i++)
+			//notice that!
 			v.push_back(vector<int>());
 	}
 	~SparseGraph() {
