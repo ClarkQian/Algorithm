@@ -15,7 +15,7 @@ using namespace std;
 
 */
 
-
+//Jump two level to find the root, even though the left level is only one, but the root's parent is itself.
 
 class unionFind4
 {
