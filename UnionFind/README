@@ -3,6 +3,8 @@ TO KNOW:
 The improvement is around to reduce the level of the tree, which is more efficient to find the group root.
 It is not only worked in union, but also worked in finding process.
 
+it is o(1)
+
 so the best siuation is :
 
 
