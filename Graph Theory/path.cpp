@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+//depend on dfs's process we should add from[] to record the vertex, which it comes from.
+//using stack and vector to reverse print.
 
 template <typename Graph>
 class Path
