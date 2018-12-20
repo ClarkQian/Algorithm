@@ -63,7 +63,9 @@ public:
 		DenseGraph &G;
 		int n;
 		int index;
-		adjIterator(DenseGraph &graph, int n) G(graph) {
+		 //const and reference can not be assigned but can use initial list to initialize.
+        	//format func_name(parameters) : A(a)....
+		adjIterator(DenseGraph &graph, int n): G(graph) {
 			this -> n = n;
 			this -> index = -1;
 		}
