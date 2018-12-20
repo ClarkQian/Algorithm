@@ -11,3 +11,8 @@ so the best siuation is :
             1
       /  /  |  \  \
      2   2   3   4  5
+
+
+
+TIPS:
+This algorithm is interesting that when we create the unionFind, the struct is not the best, but after more and more times we use find function, we will can the construct to improve the struct.
