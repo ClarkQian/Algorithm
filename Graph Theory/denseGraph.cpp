@@ -17,6 +17,7 @@ private:
 		m = 0;
 		this -> directed = directed;
 		for (int i = 0; i < n; i++) {
+			//add the object, you can also write *new vector<bool>(n, false)
 			v.push_back(vector<bool>(n, false));
 		}
 	}
