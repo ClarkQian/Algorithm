@@ -1,4 +1,4 @@
-//using adjacency matrix
+//using adjacency matrix and iterator
 
 #include <iostream>
 #include <cassert>
