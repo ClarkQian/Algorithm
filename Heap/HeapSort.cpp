@@ -7,6 +7,7 @@
 //n is the size of the array
 void shiftDown(int* arr, int n, int k){
 
+	int e = arr[k];
 	while(2*k+1 <= n-1){
 		int j = 2*k+1;
 		if(j+1 <= n-1 && arr[j+1] > arr[j])
@@ -14,10 +15,12 @@ void shiftDown(int* arr, int n, int k){
 		if(arr[k] > arr[j])
 			break;
 		else {
-			swap(arr[k], arr[j]);
+			//swap(arr[k], arr[j]); -> no need to use swap
+			arr[k] = arr[j]
 			k = j;
 		}
 	}
+	arr[k] = e;
 }
 
 
