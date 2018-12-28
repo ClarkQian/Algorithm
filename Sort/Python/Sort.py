@@ -83,5 +83,35 @@ def shellSort(arr):
                 j -= h
             arr[j] = e
         h = int(h/3)
+def quickSortThreeWay(arr):
+    __quickSortThreeWay(arr, 0, len(arr)-1)
+
+
+def __quickSortThreeWay(arr, l, r)
+
+    if l >= r:
+        return
+
+    e = arr[l]
+    lt = l
+    gt = r + 1
+    i = l + 1
+
+    while i < gt:
+        if arr[i] > e:
+            gt = gt - 1
+            arr[gt], arr[i] = arr[i], arr[gt]
+
+        elif arr[i] < e:
+            lt = lt + 1
+            arr[lt], arr[i]  = arr[i], arr[lt]
+            i = i + 1
+        else:
+            i = i + 1
+
+    arr[l], arr[lt] = arr[lt], arr[l]
+
+    __quickSortThreeWay(arr, l, lt-1)
+    __quickSortThreeWay(arr, gt, r)
 
 if __name__ == '__main__':
